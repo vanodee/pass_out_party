@@ -7,7 +7,7 @@ import App from './App.jsx'
 // Custom Styles ------------------------ //
 const colors = {
   primary: {
-    1: '',
+    1: '#527555',
     2: ''
   },
 
