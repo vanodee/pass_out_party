@@ -7,21 +7,23 @@ export default function Home() {
     <VStack
       h="100%"
       justifyContent="space-between"
-      py="2rem"
+      p="5%"
       // bg="red"
     >
       <Image
         src={PriceImg}
         alt='gate fee'
-        w="400px"
+        w="70%"
+        maxW="300px"
       />
+
       <Heading
         color="white"
-        fontSize="2xl"
-        textShadow='0px 5px rgba(0, 0, 0, 0.8)'
+        fontSize={{base:"lg", md:"xl", lg:"2xl"}}
+        textShadow='0px 3px rgba(0, 0, 0, 0.8)'
         textAlign='center'
       >
-        13th June, 2024 (THURSDAY)
+        13th June, 2024 (6PM - DAWN)
         <br />
         <br />
         PAlAZINNO HOTEL AND SUITES

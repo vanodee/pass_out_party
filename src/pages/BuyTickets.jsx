@@ -38,9 +38,27 @@ export default function BuyTickets() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values)
-      }).then(() => {
-        console.log('Ticket Purchase Sucessful');
       })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Form submission error: ' + response.statusText);
+          }
+          return response.json();
+        })
+        .then(data => {
+          const redirectUrl = data.redirectUrl; // Assuming the response contains a field 'redirectUrl'
+
+          console.log('Ticket Purchase Successful');
+
+          if (redirectUrl) {
+            window.location.href = redirectUrl;
+          } else {
+            console.error('Redirect URL not found in the response');
+          }
+        })
+        .catch(error => {
+          console.error('Form submission error:', error);
+        })
     },
   });
 
@@ -68,13 +86,14 @@ export default function BuyTickets() {
       borderRadius="1rem"
       justifyContent="center"
       alignItems="center"
-      p="2rem"
+      p="5%"
       mx="10%"
-      my="5%"
+      my="3%"
     >
 
       <Heading
         color="white"
+        fontSize="xx-large"
       >
         BUY TICKETS
       </Heading>
@@ -98,6 +117,7 @@ export default function BuyTickets() {
             onBlur={formik.handleBlur}
             bg={'highlight.1'}
             focusBorderColor='primary.2'
+            placeholder="Just your first name, is fine"
           />
           <FormErrorMessage sx={errorStyles}>
             {formik.errors.name}
@@ -119,7 +139,7 @@ export default function BuyTickets() {
             onBlur={formik.handleBlur}
             bg={'highlight.1'}
             focusBorderColor='primary.2'
-            placeholder=""
+            placeholder="Please input a valid Email"
           />
           <FormErrorMessage sx={errorStyles}>
             {formik.errors.email}
@@ -170,6 +190,7 @@ export default function BuyTickets() {
           justifySelf="center"
           type="submit"
           mt="2rem"
+          w="100%"
         >
           Proceed To Pay
         </Button>

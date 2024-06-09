@@ -34,22 +34,23 @@ export default function RootLayout() {
               alignItems="center"
           >
               <VStack
-                h="100%"
+                    h="100%"
                     w="800px"
+                    // maxW="800px"
                     bgImage={BackgroundImg}
 
-                  bgSize="cover"
-                  spacing="0px"
+                    bgSize="cover"
+                    spacing="0px"
               >
                   <Box
-                      h={pathArraySize === 0 ? "30vh" : "10vh"}
+                      h={pathArraySize === 0 ? "20vh" : "10vh"}
                     //   bg="red"
                   >
                       <Link to="/">
                           <Image
-                              src={PartyLogo}
-                              alt="The Pass Out Party"
-                              h="80%"
+                                src={PartyLogo}
+                                alt="The Pass Out Party"
+                                h="80%"
                                 mt={pathArraySize === 0 ? "15%" : "10%"}
                           />
                       </Link>
@@ -57,23 +58,24 @@ export default function RootLayout() {
 
 
                   <Box
-                        h={pathArraySize === 0 ? "60vh" : "80vh"}
+                        h={pathArraySize === 0 ? "70vh" : "80vh"}
                         w="100%"
+                        overflow="hidden"
+                        overflowY="scroll"
                         // bg="Blue"
                   >
                       <Outlet />
                   </Box>
 
                   <Box
-                      h="10vh"
-                      py="1.5rem"
-                    //   bg="pink"
+                        h="10vh"
+                        // bg="pink"
                   >
                       <Image
                           src={StevanoPetersLogo}
                           alt="SP Logo"
-                          w="50px"
-                          mb="1rem"
+                          h="60%"
+                          my="30%"
                       />
                   </Box>
 

@@ -10,7 +10,7 @@ import {
 import Home from './pages/Home'
 import BuyTickets from './pages/BuyTickets'
 import ConfirmedTicket, { confirmation_loader } from './pages/ConfirmedTicket'
-import AdminPage from './pages/AdminPage'
+import AdminPage, { guestinfo_loader } from './pages/AdminPage'
 
 
 // LAYOUTS
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
 
       <Route path=':id' element={<ConfirmedTicket />} loader={confirmation_loader} />
 
-      <Route path='Admin' element={<AdminPage />} />
+      <Route path='Admin' element={<AdminPage />} loader={guestinfo_loader} />
 
     </Route>
   )
