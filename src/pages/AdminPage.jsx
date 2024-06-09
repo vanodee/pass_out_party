@@ -1,9 +1,21 @@
-import { Heading, Image, VStack } from "@chakra-ui/react";
+import { HStack, Heading, Image, VStack } from "@chakra-ui/react";
 import PaperEffect from "../assets/Paper.webp"
 import { Link, useLoaderData, useParams } from "react-router-dom"
 
 export default function AdminPage() {
   const guest_count = useLoaderData();
+
+  //Repetitive Styles
+  const div_styles = {
+    bg: "primary.1",
+    p: "2rem",
+    borderRadius: "1rem",
+    color: "white",
+    textAlign: "center",
+    textShadow: '0px 4px rgba(0, 0, 0, 0.8)',
+    w: "50%"
+  }
+
 
   return (
     <>
@@ -11,17 +23,37 @@ export default function AdminPage() {
         bg="white"
         w="100%"
         h="100%"
-        py="5%"
-        justifyContent="space-between"
+        py="4%"
+        spacing="3rem"
+        // justifyContent="space-between"
       >
-        <Heading textAlign="center">
-          GUEST LIST
+        <Heading textAlign="center" fontSize="2xl">
+          TOTAL GUESTS
+          <br />
+          CONFIRMED:
+          <br />
+          {guest_count.length}
         </Heading>
 
+        <HStack>
+          <VStack sx={div_styles}>
+            <Heading fontSize="2xl">
+              GUYS:
+              <br />
+              XX
+            </Heading>
+          </VStack>
 
-        <Heading textAlign="center">
-          GENDER:
-        </Heading>
+          <VStack sx={div_styles}>
+            <Heading fontSize="2xl">
+              LADIES:
+              <br />
+              XX
+            </Heading>
+          </VStack>
+        </HStack>
+
+
       </VStack>
 
       <Image
@@ -40,9 +72,8 @@ export default function AdminPage() {
 }
 
 
-// //LOADER FUNCTION
-// export const guestinfo_loader = async ({ params }) => {
-//   const { id } = params
-//   const res = await fetch('http://localhost:4000/guests/' + id);
-//   return res.json();
-// }
+//LOADER FUNCTION
+export const guestinfo_loader = async () => {
+  const res = await fetch('http://localhost:4000/guests/');
+  return res.json();
+}

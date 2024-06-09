@@ -15,10 +15,13 @@ export default function ConfirmedTicket() {
         bg="white"
         w="100%"
         h="100%"
-        py="5%"
+        py="3%"
         justifyContent="space-between"
       >
-        <Heading textAlign="center">
+        <Heading
+          textAlign="center"
+          fontSize={{base:'2xl'}}
+        >
           Welcome To The Party,
           <br />
           {confirmed_user.name}
@@ -27,10 +30,14 @@ export default function ConfirmedTicket() {
         <Image
           src={CheckMark}
           alt="Check Mark"
-          w="40%"
+          w="40vh"
+          maxW="300px"
         />
 
-        <Heading textAlign="center">
+        <Heading
+          textAlign="center"
+          fontSize={{ base: '2xl' }}
+        >
           GENDER: {confirmed_user.gender}
         </Heading>
       </VStack>
