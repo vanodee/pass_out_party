@@ -34,7 +34,7 @@ export default function BuyTickets() {
       // console.log('Form submitted with values:', values);
 
       // Send Form Values to DB
-      fetch("http://localhost:4000/guests", {
+      fetch("http://localhost:5000/register", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values)
