@@ -33,4 +33,4 @@ logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 #     return jsonify({'X-CSRFToken': csrf_token})
 
 
-from backend.routes import register
+from backend.routes import register, guest_info
