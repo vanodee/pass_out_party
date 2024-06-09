@@ -33,7 +33,7 @@ export default function Home() {
       <Button
         as={NavLink}
         to="Buy_Tickets"
-        w="100%"
+        w="80%"
         color="primary.1"
         fontSize="x-large"
         py="1.5rem"
@@ -42,7 +42,7 @@ export default function Home() {
       </Button>
 
       <Button
-        w="100%"
+        w="80%"
         color="primary.1"
         fontSize="x-large"
         py="1.5rem"

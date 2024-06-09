@@ -1,0 +1,46 @@
+{
+  "guests": [
+    {
+      "id": "1",
+      "name": "Alfred",
+      "email": "alfred@passoutparty.com",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "name": "Stevano",
+      "email": "stevano@passoutparty.com",
+      "gender": "Male"
+    },
+    {
+      "id": "3",
+      "name": "Mough",
+      "email": "mough@passoutparty.com",
+      "gender": "Female"
+    },
+    {
+      "id": "4",
+      "name": "Joy",
+      "email": "joy@passoutparty.com",
+      "gender": "Female"
+    },
+    {
+      "id": "8444",
+      "name": "Donald",
+      "email": "donald@doinz.com",
+      "gender": "Male"
+    },
+    {
+      "id": "dc44",
+      "name": "Tony Montanna",
+      "email": "tonyM@doinz.com",
+      "gender": "Male"
+    },
+    {
+      "id": "f705",
+      "name": "Fade",
+      "email": "fade@doinz.ng",
+      "gender": "Female"
+    }
+  ]
+}

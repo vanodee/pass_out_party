@@ -9,7 +9,7 @@ import {
 // PAGES
 import Home from './pages/Home'
 import BuyTickets from './pages/BuyTickets'
-import ConfirmedTicket from './pages/ConfirmedTicket'
+import ConfirmedTicket, { confirmation_loader } from './pages/ConfirmedTicket'
 import AdminPage from './pages/AdminPage'
 
 
@@ -20,10 +20,15 @@ import RootLayout from './layouts/RootLayout';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
+
       <Route index element={<Home />} />
+
       <Route path='Buy_Tickets' element={<BuyTickets />} />
-      <Route path='Confirmed_Ticket' element={<ConfirmedTicket />} />
+
+      <Route path=':id' element={<ConfirmedTicket />} loader={confirmation_loader} />
+
       <Route path='Admin' element={<AdminPage />} />
+
     </Route>
   )
 )

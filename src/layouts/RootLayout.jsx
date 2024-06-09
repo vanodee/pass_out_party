@@ -34,14 +34,15 @@ export default function RootLayout() {
               alignItems="center"
           >
               <VStack
-                  h="100%"
-                  w="800px"
-                  bgImage={BackgroundImg}
+                h="100%"
+                    w="800px"
+                    bgImage={BackgroundImg}
+
                   bgSize="cover"
                   spacing="0px"
               >
                   <Box
-                      h="30vh"
+                      h={pathArraySize === 0 ? "30vh" : "10vh"}
                     //   bg="red"
                   >
                       <Link to="/">
@@ -49,15 +50,16 @@ export default function RootLayout() {
                               src={PartyLogo}
                               alt="The Pass Out Party"
                               h="80%"
-                              mt="15%"
+                                mt={pathArraySize === 0 ? "15%" : "10%"}
                           />
                       </Link>
                   </Box>
 
 
                   <Box
-                      h="60vh"
-                    //   bg="Blue"
+                        h={pathArraySize === 0 ? "60vh" : "80vh"}
+                        w="100%"
+                        // bg="Blue"
                   >
                       <Outlet />
                   </Box>
