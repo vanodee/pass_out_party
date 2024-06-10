@@ -7,4 +7,4 @@ def generate_qrcode(guest):
     qr.add_data(f"https://deer-eternal-mongoose.ngrok-free.app/guest/{guest.id}")
     qr.make(fit=True)
     img = qr.make_image(fill_color='green', back_color='white')
-    img.save(f'Pass_out_party_{guest.name.split()[0]}.png')
+    img.save(f'static/images/Pass_out_party_{guest.id}.png')

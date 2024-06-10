@@ -46,15 +46,16 @@ export default function BuyTickets() {
           return response.json();
         })
         .then(data => {
-          const redirectUrl = data.redirectUrl; // Assuming the response contains a field 'redirectUrl'
+          // const redirectUrl = data.data['authorization_url']; // Assuming the response contains a field 'redirectUrl'
+          console.log(data);
+
+          // if (redirectUrl) {
+          //   window.location.href = redirectUrl;
+          // } else {
+          //   console.error('Redirect URL not found in the response');
+          // }
 
           console.log('Ticket Purchase Successful');
-
-          if (redirectUrl) {
-            window.location.href = redirectUrl;
-          } else {
-            console.error('Redirect URL not found in the response');
-          }
         })
         .catch(error => {
           console.error('Form submission error:', error);
