@@ -34,7 +34,7 @@ export default function BuyTickets() {
       // console.log('Form submitted with values:', values);
 
       // Send Form Values to DB
-      fetch("http://localhost:5000/register", {
+      fetch("http://localhost:4000/guests", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values)
@@ -46,16 +46,16 @@ export default function BuyTickets() {
           return response.json();
         })
         .then(data => {
-          // const redirectUrl = data.data['authorization_url']; // Assuming the response contains a field 'redirectUrl'
-          console.log(data);
-
-          // if (redirectUrl) {
-          //   window.location.href = redirectUrl;
-          // } else {
-          //   console.error('Redirect URL not found in the response');
-          // }
+          const { redirectUrl, paymentReference } = data; // Assuming the response contains a field 'redirectUrl' and 'paymentReference'
 
           console.log('Ticket Purchase Successful');
+
+          if (redirectUrl && paymentReference) {
+            localStorage.setItem('paymentReference', paymentReference);
+            window.location.href = redirectUrl;
+          } else {
+            console.error('Required data not found in the response');
+          }
         })
         .catch(error => {
           console.error('Form submission error:', error);

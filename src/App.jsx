@@ -11,6 +11,7 @@ import Home from './pages/Home'
 import BuyTickets from './pages/BuyTickets'
 import ConfirmedTicket, { confirmation_loader } from './pages/ConfirmedTicket'
 import AdminPage, { guestinfo_loader } from './pages/AdminPage'
+import VerificationPage from './pages/VerificationPage';
 
 
 // LAYOUTS
@@ -28,6 +29,8 @@ const router = createBrowserRouter(
       <Route path=':id' element={<ConfirmedTicket />} loader={confirmation_loader} />
 
       <Route path='Admin' element={<AdminPage />} loader={guestinfo_loader} />
+
+      <Route path='Verification' element={<VerificationPage />}  />
 
     </Route>
   )

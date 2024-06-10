@@ -21,7 +21,7 @@ export default function RootLayout() {
 
         // setCurrentPage(formattedName)
         setpathArraySize(pathParts.length)    // This stores the length of the path array
-        console.log("Parent: ", lastPart, pathParts.length)
+        // console.log("Parent: ", lastPart, pathParts.length)
     }, [location])
 
     return (
