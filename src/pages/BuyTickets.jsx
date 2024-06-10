@@ -46,14 +46,15 @@ export default function BuyTickets() {
           return response.json();
         })
         .then(data => {
-          const redirectUrl = data.redirectUrl; // Assuming the response contains a field 'redirectUrl'
+          const { redirectUrl, paymentReference } = data; // Assuming the response contains a field 'redirectUrl' and 'paymentReference'
 
           console.log('Ticket Purchase Successful');
 
-          if (redirectUrl) {
+          if (redirectUrl && paymentReference) {
+            localStorage.setItem('paymentReference', paymentReference);
             window.location.href = redirectUrl;
           } else {
-            console.error('Redirect URL not found in the response');
+            console.error('Required data not found in the response');
           }
         })
         .catch(error => {
