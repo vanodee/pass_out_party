@@ -17,10 +17,10 @@ def register():
         print(guest_json)
         # guest_dict.pop('csrf_token', None)
         guest = Guest(**guest_json)
-        guest.save()
+        # guest.save()
         session['guest_id'] = guest.id
         print(guest.id)
-        generate_qrcode(guest)
-        send_html_email('Registration Successful', guest.email, 'index.html', id=session['guest_id'])
+        # generate_qrcode(guest)
+        # send_html_email('Registration Successful', guest.email, 'index.html', id=session['guest_id'])
         # return jsonify({'message': 'Done'}), 201
         return paystack_response

@@ -17,7 +17,7 @@ export default function VerificationPage() {
         const paymentReference = localStorage.getItem('paymentReference');
 
         if (paymentReference) {
-            fetch(`http://localhost:4000/verify?reference=${paymentReference}`)
+            fetch(`http://localhost:5000/verify?reference=${paymentReference}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Error fetching transaction details: ' + response.statusText);
@@ -25,6 +25,7 @@ export default function VerificationPage() {
                     return response.json();
                 })
                 .then(data => {
+                    console.log(data);
                     setTransactionDetails(data);
                     setLoading(false);
                 })
